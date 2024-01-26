@@ -88,6 +88,8 @@ while True:
                 # Calculate the relative (x,y) coordinates
                 
                 relative_x, relative_y = cX - center_x, cY - center_y
+                pserv=int(pserv)
+                tserv=int(tserv)
                 if relative_x < 0:
                     pan_x="pan left"
                     pserv=pserv+1
