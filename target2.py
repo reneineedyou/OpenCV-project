@@ -9,6 +9,8 @@ color_to_track = None
 lower_color_bound = None
 upper_color_bound = None
 tracking_enabled = False
+pserv=90
+tserv=90 
 
 # Function to handle mouse clicks
 def select_color(event, x, y, flags, param):
@@ -51,6 +53,8 @@ while True:
     firing_area_end = (center_x + targetsquare, center_y + targetsquare)
     cv2.rectangle(frame, firing_area_start, firing_area_end, (255, 0, 0), 2)
     
+   
+    
     if tracking_enabled and color_to_track is not None:
         # Convert the frame to HSV
         hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
@@ -74,17 +78,26 @@ while True:
 
                 
                 # Calculate the relative (x,y) coordinates
+                
                 relative_x, relative_y = cX - center_x, cY - center_y
                 if relative_x < 0:
                     pan_x="pan left"
+                    pserv=pserv+1
                 else :
                     pan_x="pan right"
-                    
+                    pserv=pserv-1
                 if relative_y < 0:
                     tilt_y="tilt up"
+                    tserv=tserv+1
                 else :
                     tilt_y="tilt down"
-                print("Relative Position: (", relative_x, ",", relative_y, ",", pan_x,",", tilt_y, ")")
+                    tserv=tserv-1
+                if pserv>180: pserv=180
+                if pserv<0: pserv=0
+                if tserv>180: tserv=180
+                if tserv<90: tserv=90
+
+                print("Relative Position: (", relative_x, " , ", relative_y, ") , (", pan_x,",", tilt_y, ") (", pserv," , ",tserv,')')
                 
                 
                 
