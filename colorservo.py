@@ -15,9 +15,9 @@ pserv=90
 tserv=90 
 
 try:
-    arduino = serial.Serial('/dev/ttyAMC1', 9600, timeout=1)
+    arduino = serial.Serial('/dev/ttyACM1', 9600, timeout=1)
 except:
-    arduino = serial.Serial('/dev/ttyAMC0', 9600, timeout=1)
+    arduino = serial.Serial('/dev/ttyACM0', 9600, timeout=1)
 arduino.reset_input_buffer()   
 
 # Function to handle mouse clicks
