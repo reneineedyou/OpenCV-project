@@ -110,6 +110,7 @@ while True:
                 print("Relative Position: (", relative_x, " , ", relative_y, ") , (", pan_x,",", tilt_y, ") (", pserv," , ",tserv,')')
                 pserv=str(pserv)
                 tserv=str(tserv)
+                
                 arduino.write((pserv+";"+tserv+"\n").encode('utf-8'))
                 time.sleep(0.60)
                 
