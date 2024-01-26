@@ -92,10 +92,10 @@ while True:
                 tserv=int(tserv)
                 if relative_x < 0:
                     pan_x="pan left"
-                    pserv=pserv+1
+                    pserv=pserv-1
                 else :
                     pan_x="pan right"
-                    pserv=pserv-1
+                    pserv=pserv+1
                 if relative_y < 0:
                     tilt_y="tilt up"
                     tserv=tserv+1
@@ -116,6 +116,7 @@ while True:
                 # Check if the target is within the specified range
                 if -targetsquare <= relative_x <= targetsquare and -targetsquare <= relative_y <= targetsquare:
                     cv2.putText(frame, "FIRE", (center_x - targetsquare - 25, center_y - targetsquare - 25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
+        time.sleep(1)
                     
                 
 
