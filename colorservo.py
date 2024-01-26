@@ -106,7 +106,9 @@ while True:
                 if tserv<90: tserv=90
 
                 print("Relative Position: (", relative_x, " , ", relative_y, ") , (", pan_x,",", tilt_y, ") (", pserv," , ",tserv,')')
-                arduino.write(str(pserv+";"+tserv+"\n").encode('utf-8'))
+                pserv=str(pserv)
+                tserv=str(tserv)
+                arduino.write((pserv+";"+tserv+"\n").encode('utf-8'))
                 
                 
                 # Check if the target is within the specified range
