@@ -1,4 +1,4 @@
-import cv2
+import cv2q
 import numpy as np
 
 # Initialize the webcam
