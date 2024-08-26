@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-#
+
 #"n" to select a new color
 #"q" to quit program
 
