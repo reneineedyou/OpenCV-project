@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 
-#"n" to select a new color
+#"n" to select a new colorQ 
 #"q" to quit program
 
 # Initialize the webcam
